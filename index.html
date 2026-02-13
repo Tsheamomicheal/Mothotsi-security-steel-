@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Mothotsi Manufacturing & Construction</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("1770907471638.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Menu Button */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 15px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* Side Menu */
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+#side-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+#side-menu a:hover {
+    background: gold;
+    color: black;
+}
+
+#side-menu.active {
+    left: 0;
+}
+
+/* Logo */
+.logo-header {
+    background: black;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 2px solid gold;
+}
+
+.logo-header img {
+    height: 140px;
+}
+
+/* Content */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    min-height: 100vh;
+}
+
+h2 {
+    color: gold;
+}
+
+button {
+    background: gold;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-toggle" id="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<nav id="side-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#contact">Contact</a>
+</nav>
+
+<header class="logo-header">
+    <img src="file_00000000470c71f8a3dcd01afbdc205d (2).jpg" alt="Company Logo">
+</header>
+
+<section>
+    <h2>About Us</h2>
+
+    <p>
+        At Mothotsi Manufacturing & Construction, we are passionate about protecting 
+        homes and businesses in Soshanguve.
+    </p>
+
+    <p>
+        ✔ Security steel & gates<br><br>
+        ✔ Garage motor installations<br><br>
+        ✔ Steel windows & doors<br><br>
+        ✔ Custom welding & carports
+    </p>
+
+    <p>
+        We pride ourselves on strong workmanship, affordable pricing,
+        and delivering every project on time.
+        <br><br>
+        We treat every project like it’s our own home.
+    </p>
+
+    <br>
+    <button onclick="history.back()">⬅ Go Back</button>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById("mobile-menu");
+    const sideMenu = document.getElementById("side-menu");
+
+    menu.addEventListener("click", function () {
+        sideMenu.classList.toggle("active");
+    });
+
+    // Close menu when link clicked
+    document.querySelectorAll("#side-menu a").forEach(link => {
+        link.addEventListener("click", function() {
+            sideMenu.classList.remove("active");
+        });
+    });
+});
+</script>
+
+</body>
+</html>
