@@ -8,10 +8,11 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url("1770907471638.jpg") no-repeat center center fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212 url("1770907471638.jpg") no-repeat center center fixed;
     background-size: cover;
     color: white;
+    line-height: 1.6;
 }
 
 /* Menu Button */
@@ -31,6 +32,19 @@ body {
     height: 3px;
     background: white;
     margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Side Menu */
@@ -77,14 +91,44 @@ body {
 
 /* Content */
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    background: rgba(0,0,0,0.8);
-    min-height: 100vh;
+    background: rgba(0,0,0,0.85);
+    min-height: 50vh;
+    border-bottom: 1px solid #333;
 }
 
 h2 {
     color: gold;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    transition: 0.3s;
+}
+
+.service-item:hover {
+    border-color: gold;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.service-item h3 {
+    color: gold;
+    margin-top: 0;
 }
 
 button {
@@ -108,17 +152,20 @@ button {
 </div>
 
 <nav id="side-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<header class="logo-header">
-    <img src="file_00000000470c71f8a3dcd01afbdc205d (2).jpg" alt="Company Logo">
+<header class="logo-header" id="home">
+    <div class="logo-container">
+        <img src="logo.png" alt="Mothotsi Manufacturing & Construction" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <h1 class="logo-fallback" style="display:none; color: gold; margin: 0; padding: 20px;">MOTHOTSI</h1>
+    </div>
 </header>
 
-<section>
+<section id="about">
     <h2>About Us</h2>
 
     <p>
@@ -139,10 +186,41 @@ button {
         <br><br>
         We treat every project like it’s our own home.
     </p>
-
-    <br>
-    <button onclick="history.back()">⬅ Go Back</button>
 </section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Security Steel & Gates</h3>
+            <p>High-quality steel gates designed for maximum security and durability.</p>
+        </div>
+        <div class="service-item">
+            <h3>Garage Motor Installations</h3>
+            <p>Reliable automation for your garage doors, ensuring convenience and safety.</p>
+        </div>
+        <div class="service-item">
+            <h3>Steel Windows & Doors</h3>
+            <p>Custom-made steel frames that combine strength with aesthetic appeal.</p>
+        </div>
+        <div class="service-item">
+            <h3>Custom Welding & Carports</h3>
+            <p>Expert welding services for carports and other custom steel structures.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to secure your property? Get in touch with us today!</p>
+    <p>📍 Soshanguve, Pretoria</p>
+    <p>📞 Phone: <a href="tel:+27000000000" style="color: gold; text-decoration: none;">[Insert Phone Number]</a></p>
+    <p>📧 Email: <a href="mailto:info@mothotsi.co.za" style="color: gold; text-decoration: none;">info@mothotsi.co.za</a></p>
+</section>
+
+<footer style="text-align: center; padding: 20px; background: #000; border-top: 2px solid gold;">
+    <p>&copy; 2024 Mothotsi Manufacturing & Construction. All rights reserved.</p>
+</footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -151,12 +229,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menu.addEventListener("click", function () {
         sideMenu.classList.toggle("active");
+        menu.classList.toggle("active");
     });
 
     // Close menu when link clicked
     document.querySelectorAll("#side-menu a").forEach(link => {
         link.addEventListener("click", function() {
             sideMenu.classList.remove("active");
+            menu.classList.remove("active");
         });
     });
 });
