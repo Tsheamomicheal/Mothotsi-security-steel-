@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mothotsi Security Steel</title>
-  <meta name="description" content="Mothotsi Security Steel specializes in steel and aluminium fabrication, gate and garage door installation, gate motors, and steel staircase solutions." />
+  <title>Mothotsi Aluminium & Steel Projects</title>
+  <meta name="description" content="Mothotsi Aluminium & Steel Projects specializes in custom welding, steel & aluminium gates, carports, window/door burglar bars, frames, plumbing, carpentry, and handyman services in Soshanguve ext 8." />
   <style>
     :root {
-      --primary: #0b5ed7;
-      --secondary: #3b82f6;
-      --accent: #f8fbff;
+      --primary: #1b4d3e; /* Deep Forest Green */
+      --primary-light: #2c6e58;
+      --secondary: #d32f2f; /* Vibrant Red */
+      --accent: #f4fbf7; /* Very light mint-white for backgrounds */
       --text: #1e293b;
-      --muted: #1d4ed8;
-      --success: #22c55e;
+      --muted: #475569;
+      --success: #2e7d32; /* Safe green */
       --deep: #0f172a;
+      --white: #ffffff;
+      --light-gray: #f1f5f9;
     }
 
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text);
       line-height: 1.6;
-      background: linear-gradient(180deg, #054ba7 0%, #eef6ff 100%);
+      background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+      min-height: 100vh;
     }
 
     header {
@@ -32,21 +36,48 @@
 
     .site-header {
       position: relative;
+      background: var(--primary);
+      padding: 60px 20px;
+      color: var(--white);
+      text-align: center;
+      border-bottom: 5px solid var(--secondary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-logo-placeholder {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-logo-placeholder .sub {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffd700; /* Golden text for sub branding */
+      margin-top: 5px;
+      letter-spacing: 2px;
     }
 
     .menu-toggle {
       position: absolute;
       top: 16px;
       right: 16px;
-      z-index: 3;
+      z-index: 10;
       display: flex;
       flex-direction: column;
       gap: 5px;
       padding: 10px;
       border: none;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.96);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       cursor: pointer;
     }
 
@@ -75,14 +106,14 @@
       position: absolute;
       top: 58px;
       right: 16px;
-      z-index: 4;
+      z-index: 9;
       display: none;
       flex-direction: column;
-      min-width: 170px;
+      min-width: 180px;
       padding: 10px;
       border-radius: 12px;
-      background: white;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     }
 
     .menu-panel.open {
@@ -90,7 +121,7 @@
     }
 
     .menu-panel a {
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 8px;
       color: var(--deep);
       text-decoration: none;
@@ -98,111 +129,207 @@
     }
 
     .menu-panel a:hover {
-      background: #eef6ff;
-      color: var(--primary);
-    }
-
-    header img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      max-height: 150px;
+      background: var(--accent);
+      color: var(--primary-light);
     }
 
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
+    /* Slogans & Badges Section */
+    .badges-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .badge-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-item.highlight {
+      background: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    /* About Card & General Card styling */
     .card {
-      background: white;
+      background: var(--white);
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(11, 94, 215, 0.12);
-      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 35px;
       margin-top: -30px;
       position: relative;
       z-index: 2;
     }
 
     .section { padding: 40px 0; }
-    .section h2 { color: var(--primary); margin-bottom: 15px; }
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-left: 5px solid var(--secondary);
+      padding-left: 15px;
+    }
 
+    .about-location {
+      background: var(--accent);
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Services Grid */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
       margin-top: 20px;
     }
 
     .service {
-      background: linear-gradient(135deg, #ffffff, #f0f7ff);
-      border-left: 4px solid var(--secondary);
-      padding: 20px;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-top: 4px solid var(--primary);
+      padding: 25px;
       border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service h3 { margin-top: 0; color: var(--primary); }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
 
+    .service.featured {
+      border-top-color: var(--secondary);
+      background: linear-gradient(180deg, var(--white) 0%, #fffbfb 100%);
+    }
+
+    .service h3 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service.featured h3 {
+      color: var(--secondary);
+    }
+
+    .service-list {
+      margin: 12px 0 0 0;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .service-list li {
+      margin-bottom: 8px;
+    }
+
+    /* Call to Action */
     .cta {
       text-align: center;
-      background: linear-gradient(135deg, #0b5ed7, #60a5fa);
-      color: white;
-      padding: 30px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 40px 20px;
       border-radius: 16px;
       margin: 30px 0;
+      box-shadow: 0 10px 25px rgba(27, 77, 62, 0.25);
+      border-bottom: 5px solid var(--secondary);
     }
 
-    .cta a {
-      display: inline-block;
-      margin-top: 10px;
-      background: white;
-      color: var(--primary);
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: bold;
+    .cta h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 10px auto 25px;
+      opacity: 0.9;
     }
 
     .contact-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 14px;
+      gap: 15px;
     }
 
     .contact-list a {
-      background: rgba(255,255,255,0.16);
-      color: white;
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
       border: 1px solid rgba(255,255,255,0.25);
-      padding: 10px 14px;
+      padding: 12px 22px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .contact-list a:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.03);
     }
 
     .contact-list a.whatsapp {
       background: var(--success);
-      color: white;
+      color: var(--white);
       border-color: var(--success);
     }
 
+    .contact-list a.whatsapp:hover {
+      background: #25632d;
+    }
+
     .contact-list .icon {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       line-height: 1;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 25px 20px 50px;
-      color: var(--muted);
+      padding: 40px 20px 60px;
+      color: var(--primary);
       font-size: 0.95rem;
+      font-weight: 600;
     }
 
     @media (max-width: 700px) {
-      header h1 { font-size: 1.8rem; }
+      .site-header { padding: 40px 15px; }
+      .header-logo-placeholder { font-size: 1.6rem; }
+      .header-logo-placeholder .sub { font-size: 0.9rem; }
       .card { padding: 22px; }
+      .cta h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -219,56 +346,100 @@
       <a href="gallery.html">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
-    <img src="header/mothotsi.jpg" alt="Mothotsi Security Steel" />
+    <div class="header-logo-placeholder">
+      Mothotsi
+      <div class="sub">Aluminium & Steel Projects</div>
+    </div>
+
+    <div class="badges-container">
+      <div class="badge-item highlight">🛠️ We Install. We Repair.</div>
+      <div class="badge-item">🚚 Free Delivery</div>
+      <div class="badge-item">⭐ Quality Service You Can Trust!</div>
+    </div>
   </header>
 
   <main class="container">
     <section class="card" id="about">
       <h2>About Us</h2>
-      <p>At <strong>Mothotsi Security Steel</strong>, we specialize in the design, fabrication, and installation of durable steel and aluminium products. We provide reliable security and access solutions for gates, garage doors, and motorized systems, with a strong focus on quality workmanship and customer satisfaction.</p>
+      <p>At <strong>Mothotsi Aluminium & Steel Projects</strong>, we specialize in high-quality welding, custom fabrication, and installation of durable steel and aluminium products. We are a dedicated team committed to providing top-tier craftsmanship, reliable security, and household solutions that stand the test of time.</p>
+
+      <p>Our core expertise is in welding and structural fabrications. Whether it is secure fencing, beautiful gates, custom carports, or heavy-duty burglar bars, we ensure every project is handled with precision and professionalism.</p>
+
+      <div class="about-location">
+        <span class="icon">📍</span>
+        <span>We are located in <strong>Soshanguve ext 8, South Africa</strong>, and proud to serve our local community and surrounding areas.</span>
+      </div>
     </section>
 
     <section class="section" id="services">
       <h2>Our Services</h2>
       <div class="services">
-        <div class="service">
-          <h3>Steel & Aluminium Fabrication</h3>
-          <p>Custom fabrication of steel and aluminium structures built to last.</p>
+        <!-- 1. Welding, Steel & Aluminium Fabrication -->
+        <div class="service featured">
+          <h3>🔧 Welding, Steel & Aluminium Fabrication</h3>
+          <p><strong>Our Core Specialty.</strong> We fabricate and install durable, heavy-duty structures to secure and beautify your property:</p>
+          <ul class="service-list">
+            <li><strong>Steel & Aluminium Gates:</strong> Custom-designed and professionally installed for maximum security.</li>
+            <li><strong>Carports:</strong> Built tough to protect your vehicles and outdoor areas from weather.</li>
+            <li><strong>Window & Door Burglar Bars:</strong> Custom security bars designed to secure every entry point.</li>
+            <li><strong>Window & Door Frames:</strong> Elegant and robust frames built to exact specifications.</li>
+            <li><strong>Custom Welding & Steel Structures:</strong> Professional fabrication for residential and commercial spaces.</li>
+          </ul>
         </div>
+
+        <!-- 2. Tank Maintenance & Plumbing -->
         <div class="service">
-          <h3>Gate Installation</h3>
-          <p>We create and install strong, secure gates for residential and commercial properties.</p>
+          <h3>🚰 Tank Maintenance & Plumbing</h3>
+          <p>Ensure reliable access to clean water with our comprehensive plumbing setup and maintenance services:</p>
+          <ul class="service-list">
+            <li>Water tank cleaning and disinfection.</li>
+            <li>Water tank repairs and leak fixing.</li>
+            <li>Inlet, outlet, and pressure pump setups.</li>
+            <li>Geysers, pipes, and safety valve setups.</li>
+            <li>Fixing burst pipes and unblocking drains.</li>
+          </ul>
         </div>
+
+        <!-- 3. Handyman & Carpentry -->
         <div class="service">
-          <h3>Gate Motors & Garage Door Motors</h3>
-          <p>Professional installation and maintenance of gate motors and garage door motors.</p>
+          <h3>🔨 Handyman & Household Carpentry</h3>
+          <p>Professional craftsmanship to repair, upgrade, and maintain your beautiful home interiors and exteriors:</p>
+          <ul class="service-list">
+            <li>Kitchen cupboards and custom wardrobes.</li>
+            <li>Doors and door frame installation & repair.</li>
+            <li>Shelving, storage solutions, and furniture assembly.</li>
+            <li>General home maintenance and painting.</li>
+            <li>Wall & floor tiling and general repairs.</li>
+          </ul>
         </div>
+
+        <!-- 4. Chainsaw Tree Cutting -->
         <div class="service">
-          <h3>Garage Doors & Access Systems</h3>
-          <p>Reliable garage doors and automated access solutions for everyday convenience.</p>
-        </div>
-        <div class="service">
-          <h3>Steel Staircases</h3>
-          <p>Stylish and durable steel staircases tailored to your space and needs.</p>
+          <h3>🌳 Chainsaw Tree Cutting & Garden</h3>
+          <p>Safe and efficient outdoor clearance to protect your structures and keep your gardens beautiful:</p>
+          <ul class="service-list">
+            <li>Professional tree felling and trimming.</li>
+            <li>Pruning and stump removal.</li>
+            <li>Complete garden and site clearing.</li>
+            <li>Safe, fast, and clean execution.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Gallery moved to a separate page: gallery.html -->
-
     <section class="cta" id="contact">
-      <h2>Need a secure and durable solution?</h2>
-      <p>Contact us today for expert steel, aluminium, gate, and garage door services.</p>
+      <h2>Need a secure & durable solution?</h2>
+      <p>Contact us today for a free quotation! We offer free delivery and quality service you can trust.</p>
       <div class="contact-list">
-        <a href="tel:+2646228454">Call: 064 622 8454</a>
-        <a class="whatsapp" href="https://wa.me/2646228454" target="_blank" rel="noopener noreferrer"><span class="icon">💬</span> WhatsApp: 064 622 8454</a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook: Mothotsi Security Steel</a>
+        <a href="tel:+27646228454"><span class="icon">📞</span> Call: 064 622 8454</a>
+        <a class="whatsapp" href="https://wa.me/27646228454" target="_blank" rel="noopener noreferrer"><span class="icon">💬</span> WhatsApp: 064 622 8454</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Mothotsi Security Steel. All rights reserved.</p>
+    <p>© 2026 Mothotsi Aluminium & Steel Projects. All rights reserved.</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Soshanguve ext 8, South Africa</p>
   </footer>
 
   <script>
@@ -293,4 +464,3 @@
   </script>
 </body>
 </html>
- 

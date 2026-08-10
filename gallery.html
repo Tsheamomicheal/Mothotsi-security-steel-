@@ -3,32 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery - Mothotsi Security Steel</title>
-  <meta name="description" content="Gallery of Mothotsi Security Steel projects." />
+  <title>Gallery - Mothotsi Aluminium & Steel Projects</title>
+  <meta name="description" content="Explore some of our recent custom welding, steel, aluminium, and home service projects in Soshanguve." />
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 20px; background: #f7fbff; color: #0f172a; }
-    .container { max-width: 900px; margin: 0 auto; }
-    header { display: flex; align-items: center; justify-content: space-between; }
-    a.button { display: inline-block; padding: 10px 14px; background: #0b5ed7; color: white; text-decoration: none; border-radius: 8px; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
-    .tile { background: white; border-radius: 10px; padding: 10px; box-shadow: 0 6px 18px rgba(11, 94, 215, 0.08); }
-    .tile img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; }
+    :root {
+      --primary: #1b4d3e; /* Deep Forest Green */
+      --primary-light: #2c6e58;
+      --secondary: #d32f2f; /* Vibrant Red */
+      --accent: #f4fbf7; /* Very light mint-white for backgrounds */
+      --text: #1e293b;
+      --muted: #475569;
+      --white: #ffffff;
+      --light-gray: #f1f5f9;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, var(--accent) 0%, #e8f5ee 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 10px rgba(27, 77, 62, 0.25);
+    }
+
+    a.button:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .gallery-intro {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .tile {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .tile img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Keep flyer image in original aspect ratio */
+    .tile.flyer-tile img {
+      object-fit: contain;
+      background: #f1f5f9;
+      height: 350px;
+    }
+
+    .tile h3 {
+      margin: 12px 0 6px 0;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .tile p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px 40px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Gallery</h1>
-      <a class="button" href="index.html">Back</a>
+      <h1>Mothotsi Aluminium & Steel Projects</h1>
+      <a class="button" href="index.html">← Back to Home</a>
     </header>
 
-    <p>Explore some of our recent steel and gate installation work.</p>
+    <div class="gallery-intro">
+      <p>Explore some of our recent work and official service flyer. We specialize in custom welding, steel fabrication, and top-tier home installations in Soshanguve and surrounding areas.</p>
+    </div>
 
     <div class="gallery">
-      <div class="tile"><img src="header/mothotsi.jpg" alt="Project 1" /><p>Project 1</p></div>
-      <div class="tile"><img src="header/mothotsi.jpg" alt="Project 2" /><p>Project 2</p></div>
-      <div class="tile"><img src="header/mothotsi.jpg" alt="Project 3" /><p>Project 3</p></div>
+      <!-- 1. The flyer itself -->
+      <div class="tile flyer-tile">
+        <a href="assets/flyer.jpeg" target="_blank" title="View full-size flyer">
+          <img src="assets/flyer.jpeg" alt="Mothotsi Aluminium & Steel Projects flyer" />
+        </a>
+        <h3>Official Service Flyer</h3>
+        <p>Full-size flyer highlighting our range of services, location, and contact information.</p>
+      </div>
+
+      <!-- 2. Project placeholders / references matching our primary specialties -->
+      <div class="tile">
+        <div style="width:100%; height:250px; background: #e2e8f0; border-radius: 8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-weight:600;">[ Steel & Aluminium Gate ]</div>
+        <h3>Custom Gates</h3>
+        <p>Expert fabrication and installation of security-first gates built with premium steel and aluminium.</p>
+      </div>
+
+      <div class="tile">
+        <div style="width:100%; height:250px; background: #e2e8f0; border-radius: 8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-weight:600;">[ Custom Steel Carport ]</div>
+        <h3>Durable Carports</h3>
+        <p>Custom carports welded to order, providing safe shelter for your vehicles and belongings.</p>
+      </div>
+
+      <div class="tile">
+        <div style="width:100%; height:250px; background: #e2e8f0; border-radius: 8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-weight:600;">[ Window & Door Burglar Bars ]</div>
+        <h3>Burglar Bars & Safety Frames</h3>
+        <p>Heavy-duty, beautifully designed window and door burglar bars for complete peace of mind.</p>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>© 2026 Mothotsi Aluminium & Steel Projects. Soshanguve ext 8, South Africa.</p>
+  </footer>
 </body>
 </html>
